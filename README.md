@@ -14,7 +14,7 @@ Install To resources/[esx]/new_banking << MUST BE INSTALLED HERE
 
 
 Add this in your server.cfg :
-start banking
+start new_banking
 
 Credits: Script Created By: @onlyserenity(amjedcha)
 
