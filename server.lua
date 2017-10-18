@@ -15,7 +15,6 @@ AddEventHandler('bank:deposit', function(amount)
 	else
 		xPlayer.removeMoney(amount)
 		xPlayer.addAccountMoney('bank', tonumber(amount))
-		TriggerClientEvent('chatMessage', _source, xPlayer.getBank())
 	end
 end)
 
@@ -27,7 +26,6 @@ AddEventHandler('bank:withdraw', function(amount)
 	local base = 0
 	amount = tonumber(amount)
 	base = xPlayer.getAccount('bank').money
-	TriggerClientEvent('chatMessage', _source, base)
 	if amount == nil or amount <= 0 or amount > base then
 		TriggerClientEvent('chatMessage', _source, "Invalid Amount")
 	else
