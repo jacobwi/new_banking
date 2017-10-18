@@ -10,7 +10,7 @@ es_extended => https://github.com/ESX-Org/es_extended
 
 
 
-Install To resources/[esx]/banking << MUST BE INSTALLED HERE
+Install To resources/[esx]/new_banking << MUST BE INSTALLED HERE
 
 
 Add this in your server.cfg :
