@@ -1,4 +1,4 @@
-FXServer ESX All-In-One Action Menu _DEV VERSION
+FXServer NEW_BANKING
 
 NOTICE: If you edit this script, I will not provide support. I will only provide support for this script in it's unedited state.
 
