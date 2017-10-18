@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css?family=Syncopate|Unica+One');
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,400italic,500,500italic,700,700italic,900,900italic,300italic,300,100italic,100);
+
+body, html {
+	overflow-y: hidden;
+}
+/* main.css */
+
+button{ 
+    color: white;
+    background-color:  #b5050e;
+    font-family: 'Unica One', cursive;
+    background-size: 50px;
+    margin: 10px auto;
+	padding: 10px 24px;
+    cursor: pointer;
+    border-radius: 10px;
+    text-transform: uppercase;
+    width: 40%;
+    height: 12%;
+    display: inline-block;
+    position: relative;
+    left: 10%;
+    bottom: -100px;
+
+}
+.general {
+    background-image: url('img/phone.png');
+	background-repeat: no-repeat;
+	font-family: 'Unica One', cursive;
+	background-size: 620px 430px;
+	width: 600px;
+	height: 400px;
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+    padding: 10px;
+	position: absolute;
+	top: 50%;
+	left: 70%;
+	margin-top: -250px;
+	margin-left: -400px;
+	padding-bottom: 20px;
+}
+
+
+button:hover{
+    background-color: #420003;
+}
+

@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <link href="style.css" rel="stylesheet" type="text/css" />
+		<script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+	
+		<style>
+	       .general {display: none;}
+
+		</style>
+		
+	<script>
+	$(function() {
+		/* open the UI for user */
+		window.addEventListener('message', function(event) {
+			if (event.data.type == "openGeneral"){
+				$('.general').css('display', 'block')
+				
+			} else if (event.data.type == "closeAll"){
+				$('.general').css('display', 'none')
+            }
+	
+		});
+	});
+	</script>
+	
+	</head>
+
+    <body>
+		<div class="general">
+            <div class="main">            
+				<button id="deposit">Deposit</button>
+				<button id="withdraw">Withdrawl</button>
+				<button id="balance">Balance</button>
+				<button id="transfer">Transfer</button>
+                <button id="exitbank">Exit</button>
+            </div>
+
+        </div>
+
+	
+	</body>
+	
+
+	
+	<script type="text/javascript">	
+        $('#exitbank').click(function(){
+            $('.general').css('display', 'none')
+            $.post('http://esx_aiomenu/NUIFocusOff', JSON.stringify({}));
+            
+        })
+
+	
+
+
+	
+	</script>
+</html>
