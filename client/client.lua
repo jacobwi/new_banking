@@ -117,7 +117,7 @@ if bankMenu then
 	Citizen.CreateThread(function()
   while true do
     Wait(0)
-	if nearBank() then
+	if nearBank() or nearATM() then
 			DisplayHelpText("Press ~INPUT_PICKUP~ to access the bank ~b~")
 	
 		if IsControlJustPressed(1, 38) then
@@ -140,7 +140,7 @@ end
 
 
 --===============================================
---==             Map Blips	               ==
+--==             Map Blips	                   ==
 --===============================================
 Citizen.CreateThread(function()
 	if showblips then
@@ -187,7 +187,7 @@ RegisterNUICallback('withdrawl', function(data)
 end)
 
 --===============================================
---==         Balance Event                   ==
+--==         Balance Event                     ==
 --===============================================
 RegisterNUICallback('balance', function()
 	TriggerServerEvent('bank:balance')
@@ -202,7 +202,7 @@ end)
 
 
 --===============================================
---==         Transfer Event                   ==
+--==         Transfer Event                    ==
 --===============================================
 RegisterNUICallback('transfer', function(data)
 	TriggerServerEvent('bank:transfer', data.to, data.amountt)

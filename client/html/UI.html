@@ -115,7 +115,7 @@
             $('.main').css('display', 'none')
                        
             
-            $.post('http://banking/NUIFocusOff', JSON.stringify({}));
+            $.post('http://new_banking/NUIFocusOff', JSON.stringify({}));
             
         })
         
@@ -159,7 +159,7 @@
     $("#deposit1").submit(function(e) {
         e.preventDefault(); // Prevent form from submitting
         
-        $.post('http://banking/deposit', JSON.stringify({
+        $.post('http://new_banking/deposit', JSON.stringify({
             amount: $("#amount").val()
 			
         }));
@@ -168,13 +168,13 @@
 		$('.depositUI').css('display', 'none')
 		$('#deposit1').css('display', 'none')
 		
-		$.post('http://banking/NUIFocusOff', JSON.stringify({}));
+		$.post('http://new_banking/NUIFocusOff', JSON.stringify({}));
 	});
 	
 	$("#transfer1").submit(function(h) {
         h.preventDefault(); // Prevent form from submitting
         
-        $.post('http://banking/transfer', JSON.stringify({
+        $.post('http://new_banking/transfer', JSON.stringify({
 			to: $("#to").val(),
             amountt: $("#amountt").val()
 			
@@ -187,14 +187,14 @@
 		$('#transfer1').css('display', 'none')
 		$('.withdrawUI').css('display', 'none')
 		$('.withdraw11').css('display', 'none')
-		$.post('http://banking/NUIFocusOff', JSON.stringify({}));
+		$.post('http://new_banking/NUIFocusOff', JSON.stringify({}));
 	});
 		
 		
 	$("#withdraw1").submit(function(g) {
 		g.preventDefault(); // Prevent form from submitting
         
-        $.post('http://banking/withdrawl', JSON.stringify({
+        $.post('http://new_banking/withdrawl', JSON.stringify({
             amountw: $("#amountw").val()
 			
         }));
@@ -204,13 +204,13 @@
 		$('.withdrawUI').css('display', 'none')
 		$('.withdraw11').css('display', 'none')
 		
-		$.post('http://banking/NUIFocusOff', JSON.stringify({}));
+		$.post('http://new_banking/NUIFocusOff', JSON.stringify({}));
 	});
 	
 	$('#balance').click(function(){
             $('.general').css('display', 'none')
 			$('.balanceUI').css('display', 'block')
-			$.post('http://banking/balance', JSON.stringify({}));
+			$.post('http://new_banking/balance', JSON.stringify({}));
      })
 	 
 	 $('#transfer').click(function(){
@@ -237,7 +237,7 @@
 			$('#deposit1').css('display', 'none')
 			$('.withdrawUI').css('display', 'none')
 			$('.withdraw11').css('display', 'none')
-            $.post('http://banking/NUIFocusOff', JSON.stringify({}));
+            $.post('http://new_banking/NUIFocusOff', JSON.stringify({}));
         }
     }
 
