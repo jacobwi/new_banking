@@ -18,4 +18,4 @@ start new_banking
 
 Credits: Script Created By: @onlyserenity(amjedcha)
 
-Licensing: Please do not edit it or post it anywhere else without @onlyserenity's permission. If you have a previous release of this script that contains the license, then you may use that version in any way that you please, but please do not use code from this version to update that version.
+Licensing: Please do not edit it or post it anywhere else without @onlyserenity's permission.
