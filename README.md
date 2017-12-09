@@ -18,4 +18,4 @@ start new_banking
 
 Credits: Script Created By: @onlyserenity(amjedcha)
 
-Licensing: Please do not edit it or post it anywhere else without @onlyserenity's permission.
+Licensing: Please do not edit the background picture of the tablet or post it anywhere else claiming it's yours without @onlyserenity's permission.
