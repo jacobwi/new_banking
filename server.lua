@@ -56,7 +56,7 @@ AddEventHandler('bank:transfer', function(to, amountt)
 	if tonumber(_source) == tonumber(to) then
 		TriggerClientEvent('chatMessage', _source, "You cannot transfer to your self")
 	else
-		if balance <= 0 or balance < tonumber(amountt) then
+		if balance <= 0 or balance < tonumber(amountt) or tonumber(amountt) <= 0 then
 			TriggerClientEvent('chatMessage', _source, "You don't have enough money in the bank.")
 		else
 			xPlayer.removeAccountMoney('bank', amountt)
