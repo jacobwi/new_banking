@@ -11,10 +11,13 @@ AddEventHandler('bank:deposit', function(amount)
 	
 	local xPlayer = ESX.GetPlayerFromId(_source)
 	if amount == nil or amount <= 0 or amount > xPlayer.getMoney() then
-		TriggerClientEvent('chatMessage', _source, "Invalid Amount")
+		-- advanced notification with bank icon
+		TriggerClientEvent('esx:showAdvancedNotification', _source, 'Bank', 'Deposit Money', 'Invalid amount', 'CHAR_BANK_MAZE', 9)
 	else
 		xPlayer.removeMoney(amount)
 		xPlayer.addAccountMoney('bank', tonumber(amount))
+                -- advanced notification with bank icon
+		TriggerClientEvent('esx:showAdvancedNotification', _source, 'Bank', 'Deposit Money', 'Deposited ~g~$' .. amount .. '~s~', 'CHAR_BANK_MAZE', 9)
 	end
 end)
 
@@ -27,10 +30,13 @@ AddEventHandler('bank:withdraw', function(amount)
 	amount = tonumber(amount)
 	base = xPlayer.getAccount('bank').money
 	if amount == nil or amount <= 0 or amount > base then
-		TriggerClientEvent('chatMessage', _source, "Invalid Amount")
+                 -- advanced notification with bank icon
+		TriggerClientEvent('esx:showAdvancedNotification', _source, 'Bank', 'Withdraw Money', 'Invalid amount', 'CHAR_BANK_MAZE', 9)
 	else
 		xPlayer.removeAccountMoney('bank', amount)
 		xPlayer.addMoney(amount)
+                 -- advanced notification with bank icon
+                TriggerClientEvent('esx:showAdvancedNotification', _source, 'Bank', 'Withdraw Money', 'Withdrawed ~r~$' .. amount .. '~s~', 'CHAR_BANK_MAZE', 9)
 	end
 end)
 
@@ -54,13 +60,18 @@ AddEventHandler('bank:transfer', function(to, amountt)
 	zbalance = zPlayer.getAccount('bank').money
 	
 	if tonumber(_source) == tonumber(to) then
-		TriggerClientEvent('chatMessage', _source, "You cannot transfer to your self")
+                -- advanced notification with bank icon
+		TriggerClientEvent('esx:showAdvancedNotification', _source, 'Bank', 'Transfer Money', 'You cannot transfer to your self!', 'CHAR_BANK_MAZE', 9)
 	else
 		if balance <= 0 or balance < tonumber(amountt) or tonumber(amountt) <= 0 then
-			TriggerClientEvent('chatMessage', _source, "You don't have enough money in the bank.")
+                        -- advanced notification with bank icon
+			TriggerClientEvent('esx:showAdvancedNotification', _source, 'Bank', 'Transfer Money', 'Not enough money to transfer!', 'CHAR_BANK_MAZE', 9)
 		else
 			xPlayer.removeAccountMoney('bank', amountt)
 			zPlayer.addAccountMoney('bank', amountt)
+                        -- advanced notification with bank icon
+                        TriggerClientEvent('esx:showAdvancedNotification', _source, 'Bank', 'Transfer Money', 'You transfered ~r~$' .. amountt .. '~s~ to ~r~' .. to .. ' .', 'CHAR_BANK_MAZE', 9)
+			TriggerClientEvent('esx:showAdvancedNotification', to, 'Bank', 'Transfer Money', 'You received ~r~$' .. amountt .. '~s~ from ~r~' .. _source .. ' .', 'CHAR_BANK_MAZE', 9)
 		end
 		
 	end
